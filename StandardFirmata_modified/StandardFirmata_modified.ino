@@ -250,7 +250,7 @@ void analogWriteCallback(byte pin, int value)
     switch(pinConfig[pin]) {
     case SERVO:
       if (IS_PIN_SERVO(pin))
-        if(value < 180)
+        if(value < 180) //when you write 180 servo turns off
         {
         servos[PIN_TO_SERVO(pin)].attach(pin);
         servos[PIN_TO_SERVO(pin)].write(value);
